@@ -5,7 +5,9 @@ echo   Pushing KV Dryfish Accounts to GitHub (Basithgithub)
 echo ===================================================
 echo.
 cd /d "%~dp0"
-git push -u origin main
+git remote set-url origin https://Basithgithub@github.com/Basithgithub/shop-accounts.git
+git config credential.https://github.com.username Basithgithub
+git -c credential.username=Basithgithub push -u origin main
 echo.
 echo ===================================================
 echo Done! You can now import on Vercel.
