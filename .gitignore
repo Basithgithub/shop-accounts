@@ -6,3 +6,4 @@ data/.active_session.json
 .env*.local
 *.log
 .vercel
+.env*

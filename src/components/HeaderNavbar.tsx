@@ -11,6 +11,7 @@ import {
   FileBarChart2,
   Fish,
   Languages,
+  Download,
 } from 'lucide-react';
 import { CashFlowSummary, ShopProfile } from '@/types/accounts';
 import { useTranslation } from '@/lib/i18n';
@@ -119,6 +120,20 @@ export default function HeaderNavbar({
             >
               <Languages className="w-3.5 h-3.5" />
               <span>{isTamil ? '🇮🇳 தமிழ்' : '🇬🇧 EN'}</span>
+            </button>
+
+            {/* Install PWA Button */}
+            <button
+              onClick={() => {
+                if (typeof window !== 'undefined') {
+                  window.dispatchEvent(new CustomEvent('trigger-pwa-install'));
+                }
+              }}
+              className="inline-flex items-center gap-1 px-2.5 py-1.5 bg-cyan-950/60 hover:bg-cyan-900/80 text-cyan-300 border border-cyan-500/30 rounded-lg text-xs font-semibold shadow-sm transition active:scale-95"
+              title={isTamil ? 'பயன்பாட்டை நிறுவுக (Install App)' : 'Install App'}
+            >
+              <Download className="w-3.5 h-3.5 text-cyan-400" />
+              <span className="hidden sm:inline">{isTamil ? 'நிறுவுக' : 'Install'}</span>
             </button>
 
             <button
